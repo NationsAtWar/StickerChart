@@ -1,0 +1,4 @@
+StickerChart
+============
+
+The Reputation System
