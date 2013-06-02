@@ -29,7 +29,7 @@ public class StickerChartDatabaseFile extends StickerChartDataSource {
 		return true;
 	}
 	
-	public FileConfiguration getDatabase() {
+	private FileConfiguration getDatabase() {
 		if(storage == null) {
 			this.reloadDatabase();
 		}
@@ -47,5 +47,44 @@ public class StickerChartDatabaseFile extends StickerChartDataSource {
 			plugin.getLogger().log(Level.SEVERE, "Could not save database to "+storageFile, e);
 			return false;
 		}
+	}
+
+	@Override
+	public boolean exists(String playerName) {
+		return this.getDatabase().contains(playerName);
+	}
+
+	@Override
+	public int getAmount(String playerName) {
+		if(!this.exists(playerName)) {
+			return 0;
+		}
+		return this.getDatabase().getInt(playerName+".amount");
+	}
+
+	@Override
+	public String getDisplayName(String playerName) {
+		if(!this.exists(playerName)) {
+			return null;
+		}
+		return this.getDatabase().getString(playerName+".displayname");
+	}
+
+	@Override
+	public boolean setAmount(String playerName, int amount) {
+		this.getDatabase().set(playerName+".amount", amount);
+		if(this.getAmount(playerName) != amount) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean setDisplayName(String playerName, String playerDisplayName) {
+		this.getDatabase().set(playerName+".playername", playerDisplayName);
+		if(!this.getDisplayName(playerName).equals(playerDisplayName)) {
+			return false;
+		}
+		return true;
 	}
 }

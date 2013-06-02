@@ -12,4 +12,12 @@ public abstract class StickerChartDataSource {
 	public abstract boolean reloadDatabase();
 	public abstract boolean saveDatabase();
 
+	public abstract boolean exists(String playerName);
+	
+	public abstract int getAmount(String playerName);
+	public abstract String getDisplayName(String playerName);
+	
+	public abstract boolean setAmount(String playerName, int amount);
+	public abstract boolean setDisplayName(String playerName, String playerDisplayName);
+
 }
