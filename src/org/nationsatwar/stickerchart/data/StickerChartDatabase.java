@@ -13,10 +13,9 @@ public class StickerChartDatabase {
 		StickerChartDatabaseType type = StickerChartDatabaseType.fromString(plugin.getConfig().getString("database"));
 		switch (type) {
 		   case FILE:
+		   default:
 			   this.source = new StickerChartDatabaseFile(plugin);
 			   this.source.reloadDatabase();
-			   break;
-		   default:
 			   break;
 		}
 	}

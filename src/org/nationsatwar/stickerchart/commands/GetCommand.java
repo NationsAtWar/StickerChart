@@ -37,7 +37,7 @@ public class GetCommand extends StickerChartCommandExecutor {
 			return false;
 		}
 		
-		plugin.getDatasource().get(player.getName());
+		plugin.sendMessage(sender, player.getName() + "has " +plugin.getDatasource().get(player.getName())+" reputation.");
 		
 		return true;
 	}
