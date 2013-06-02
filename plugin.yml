@@ -2,33 +2,33 @@ name: StickerChart
 main: org.nationsatwar.stickerchart.StickerChart
 version: 0.0.1
 commands:
-  add:
+  repadd:
     description: This adds reputation points to a player
-      usage: /repadd [player] [amount]
-      permission: stickerchart.admin
-      permission-message: You don't have permission for that command.
-  reload:
+    usage: /repadd [player] [amount]
+    permission: stickerchart.admin
+    permission-message: You don't have permission for that command.
+  repreload:
     description: This reloads the StickerChart database
-      usage: /repreload
-      permission: stickerchart.admin
-      permission-message: You don't have permission for that command.
-  reset:
+    usage: /repreload
+    permission: stickerchart.admin
+    permission-message: You don't have permission for that command.
+  represet:
     description: This resets reputation points for a player
-      usage: /represet [player]
-      permission: stickerchart.admin
-      permission-message: You don't have permission for that command.
-  set:
+    usage: /represet [player]
+    permission: stickerchart.admin
+    permission-message: You don't have permission for that command.
+  repset:
     description: This sets reputation points for a player
-      usage: /repset [player] [amount]
-      permission: stickerchart.admin
-      permission-message: You don't have permission for that command.
-  sub:
+    usage: /repset [player] [amount]
+    permission: stickerchart.admin
+    permission-message: You don't have permission for that command.
+  repsub:
     description: This removes reputation points from a player
-      usage: /repsub [player] [amount]
-      permission: stickerchart.admin
-      permission-message: You don't have permission for that command.
-  get:
-    description: This gets a player's reputation points. Defaults to sender. 
-      usage: /repget (player)
-      permission: stickerchart.rep
-      permission-message: You don't have permission for that command.
+    usage: /repsub [player] [amount]
+    permission: stickerchart.admin
+    permission-message: You don't have permission for that command.
+  repget:
+    description: This gets a player's reputation points (Defaults to sender) 
+    usage: /repget (player)
+    permission: stickerchart.rep
+    permission-message: You don't have permission for that command.
