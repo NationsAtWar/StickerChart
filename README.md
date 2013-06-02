@@ -2,12 +2,13 @@ StickerChart
 ============
 
 The Reputation System
+---------------------
 
-=Permissions
+###Permissions
 * stickerchart.admin - All commands except repget
 * stickerchart.get - Allows the user to retrieve reputation stats
 
-=Commands
+###Commands
 * repadd [player] [amount] - Adds reputation points to a player
 * repreload - reloads the StickerChart database
 * represet [player] - resets reputation points for a player
