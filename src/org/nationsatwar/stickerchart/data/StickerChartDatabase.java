@@ -30,39 +30,43 @@ public class StickerChartDatabase {
 	}
 
 	public boolean add(String playerName, String playerDisplayName, int amount) {
-		if(this.source.exists(playerName)) {
-			if(!this.source.getDisplayName(playerName).equals(playerDisplayName)) {
-				if(!this.source.setDisplayName(playerName, playerDisplayName)) {
-					this.plugin.getLogger().log(Level.SEVERE, "Unable to set new display name " + playerDisplayName + " for " + playerName);
-					return false;
-				}
-			}
+		if(!this.setDisplayName(playerName, playerDisplayName)) {
+			return false;
 		}
 		return this.source.setAmount(playerName, this.source.getAmount(playerName) + amount);
 	}
 
 	public boolean subtract(String playerName, String playerDisplayName, int amount) {
-		if(this.source.exists(playerName)) {
-			if(!this.source.getDisplayName(playerName).equals(playerDisplayName)) {
-				if(!this.source.setDisplayName(playerName, playerDisplayName)) {
-					this.plugin.getLogger().log(Level.SEVERE, "Unable to set new display name " + playerDisplayName + " for " + playerName);
-					return false;
-				}
-			}
+		if(!this.setDisplayName(playerName, playerDisplayName)) {
+			return false;
 		}
 		return this.source.setAmount(playerName, this.source.getAmount(playerName) - amount);
 	}
 
 	public boolean set(String playerName, String playerDisplayName, int amount) {
+		if(!this.setDisplayName(playerName, playerDisplayName)) {
+			return false;
+		}
+		return this.source.setAmount(playerName, amount);
+	}
+	
+	public int get(String playerName) {
+		return this.source.getAmount(playerName);
+	}
+	
+	private boolean setDisplayName(String playerName, String displayName) {
 		if(this.source.exists(playerName)) {
-			if(!this.source.getDisplayName(playerName).equals(playerDisplayName)) {
-				if(!this.source.setDisplayName(playerName, playerDisplayName)) {
-					this.plugin.getLogger().log(Level.SEVERE, "Unable to set new display name " + playerDisplayName + " for " + playerName);
-					return false;
+			if(displayName != null) {
+				if(!this.source.getDisplayName(playerName).equals(displayName)) {
+					if(!this.source.setDisplayName(playerName, displayName)) {
+						this.plugin.getLogger().log(Level.SEVERE, "Unable to set new display name " + displayName + " for " + playerName);
+					} else {
+						return true;
+					}
 				}
 			}
 		}
-		return this.source.setAmount(playerName, amount);
+		return false;
 	}
 	
 	private enum StickerChartDatabaseType {

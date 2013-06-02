@@ -1,3 +1,34 @@
 name: StickerChart
 main: org.nationsatwar.stickerchart.StickerChart
 version: 0.0.1
+commands:
+  add:
+    description: This adds reputation points to a player
+      usage: /repadd [player] [amount]
+      permission: stickerchart.admin
+      permission-message: You don't have permission for that command.
+  reload:
+    description: This reloads the StickerChart database
+      usage: /repreload
+      permission: stickerchart.admin
+      permission-message: You don't have permission for that command.
+  reset:
+    description: This resets reputation points for a player
+      usage: /represet [player]
+      permission: stickerchart.admin
+      permission-message: You don't have permission for that command.
+  set:
+    description: This sets reputation points for a player
+      usage: /repset [player] [amount]
+      permission: stickerchart.admin
+      permission-message: You don't have permission for that command.
+  sub:
+    description: This removes reputation points from a player
+      usage: /repsub [player] [amount]
+      permission: stickerchart.admin
+      permission-message: You don't have permission for that command.
+  get:
+    description: This gets a player's reputation points. Defaults to sender. 
+      usage: /repget (player)
+      permission: stickerchart.rep
+      permission-message: You don't have permission for that command.
