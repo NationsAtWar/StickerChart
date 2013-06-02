@@ -14,4 +14,4 @@ The Reputation System
 * represet [player] - resets reputation points for a player
 * repset [player] [amount] - sets reputation points for a player
 * repsub [player] [amount] - removes reputation points from a player
-* repget (payer) gets a player's reputation points. Defaults to sender
+* repget (player) gets a player's reputation points. Defaults to sender
