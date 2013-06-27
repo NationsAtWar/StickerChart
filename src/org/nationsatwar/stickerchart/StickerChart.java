@@ -12,6 +12,7 @@ import org.nationsatwar.stickerchart.commands.SubCommand;
 import org.nationsatwar.stickerchart.data.StickerChartDatabase;
 
 public class StickerChart extends JavaPlugin {
+	
 	private StickerChartDatabase data = null;
 	
 	public void onEnable() {
