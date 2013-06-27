@@ -6,15 +6,18 @@ import org.bukkit.command.CommandSender;
 import org.nationsatwar.stickerchart.StickerChart;
 
 public class StickerChartCommandExecutor implements CommandExecutor {
+	
 	protected StickerChart plugin;
-
-	protected StickerChartCommandExecutor(StickerChart stickerChart) {
-		this.plugin = stickerChart;
+	
+	public StickerChartCommandExecutor(StickerChart plugin) {
+		
+		this.plugin = plugin;
 	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command,
 			String label, String[] args) {
+		
 		return false;
 	}
 }

@@ -16,8 +16,10 @@ public class StickerChart extends JavaPlugin {
 	private StickerChartDatabase data = null;
 	
 	public void onEnable() {
-		this.data = new StickerChartDatabase(this);
+		
+		data = new StickerChartDatabase(this);
 		new StickerChartEventListener(this);
+		
 		getCommand("repreload").setExecutor(new ReloadCommand(this));
 		getCommand("repadd").setExecutor(new AddCommand(this));
 		getCommand("repset").setExecutor(new SetCommand(this));
@@ -27,18 +29,22 @@ public class StickerChart extends JavaPlugin {
 	}
 	
 	public void onDisable() {
+		
 		this.data.save();
 	}
 
 	public StickerChartDatabase getDatasource() {
-		return this.data;
+		
+		return data;
 	}
 	
 	public void sendMessage(CommandSender to, String string) {
-		to.sendMessage(ChatColor.AQUA + "["+this.getName()+"] " + ChatColor.RESET +string);
+		
+		to.sendMessage(ChatColor.AQUA + "[" + this.getName() + "] " + ChatColor.RESET +string);
 	}
 	
 	public void sendMessage(CommandSender to, String[] string) {
-		to.sendMessage(ChatColor.AQUA + "["+this.getName()+"] "  + ChatColor.RESET + string);
+		
+		to.sendMessage(ChatColor.AQUA + "[" + this.getName() + "] " + ChatColor.RESET + string);
 	}
 }

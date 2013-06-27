@@ -3,9 +3,11 @@ package org.nationsatwar.stickerchart.data;
 import org.nationsatwar.stickerchart.StickerChart;
 
 public abstract class StickerChartDataSource {
+	
 	protected static StickerChart plugin = null;
 	
 	protected StickerChartDataSource(StickerChart instance) {
+		
 		StickerChartDataSource.plugin = instance;
 	}
 	
@@ -19,5 +21,4 @@ public abstract class StickerChartDataSource {
 	
 	public abstract boolean setAmount(String playerName, int amount);
 	public abstract boolean setDisplayName(String playerName, String playerDisplayName);
-
 }
